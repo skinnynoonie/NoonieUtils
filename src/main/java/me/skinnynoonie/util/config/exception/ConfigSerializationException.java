@@ -1,8 +1,6 @@
 package me.skinnynoonie.util.config.exception;
 
-import org.jetbrains.annotations.NotNull;
-
-public class ConfigSerializationException extends ConfigException {
+public final class ConfigSerializationException extends ConfigException {
 
     public ConfigSerializationException() {
     }
@@ -17,11 +15,6 @@ public class ConfigSerializationException extends ConfigException {
 
     public ConfigSerializationException(Throwable cause) {
         super(cause);
-    }
-
-    @Override
-    public @NotNull ConfigSerializationException setFriendlyMessage(String friendlyMessage) {
-        return (ConfigSerializationException) super.setFriendlyMessage(friendlyMessage);
     }
 
 }
