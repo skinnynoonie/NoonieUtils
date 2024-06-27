@@ -34,7 +34,7 @@ public final class RomanNumeralConverter {
         return numeralBuilder.toString();
     }
 
-    public static @Range(from = 1, to = 3999) int parseValue(@NotNull String numerals) {
+    public static int parseValue(@NotNull String numerals) {
         Arguments.notNull(numerals, "numerals");
 
         int value = 0;
