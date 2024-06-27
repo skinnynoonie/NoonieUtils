@@ -1,6 +1,6 @@
 package me.skinnynoonie.util.number.roman;
 
-import me.skinnynoonie.util.check.Arguments;
+import me.skinnynoonie.util.Arguments;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Range;
 

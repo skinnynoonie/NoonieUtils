@@ -3,7 +3,7 @@ package me.skinnynoonie.util.config.serialize;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
-import me.skinnynoonie.util.check.Arguments;
+import me.skinnynoonie.util.Arguments;
 import me.skinnynoonie.util.config.Config;
 import me.skinnynoonie.util.config.exception.ConfigSerializationException;
 import org.jetbrains.annotations.NotNull;

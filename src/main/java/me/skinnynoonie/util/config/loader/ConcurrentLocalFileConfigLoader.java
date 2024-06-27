@@ -1,6 +1,6 @@
 package me.skinnynoonie.util.config.loader;
 
-import me.skinnynoonie.util.check.Arguments;
+import me.skinnynoonie.util.Arguments;
 import me.skinnynoonie.util.config.Config;
 import me.skinnynoonie.util.config.exception.ConfigException;
 import me.skinnynoonie.util.config.exception.ConfigNotFoundException;
