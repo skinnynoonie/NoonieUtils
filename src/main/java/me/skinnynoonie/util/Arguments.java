@@ -1,7 +1,5 @@
 package me.skinnynoonie.util;
 
-import java.util.Objects;
-
 /**
  * A utility class to check given arguments.
  */

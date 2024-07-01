@@ -1,4 +1,4 @@
-package me.skinnynoonie.util.config.loader;
+package me.skinnynoonie.util.config.repository;
 
 import me.skinnynoonie.util.Arguments;
 import me.skinnynoonie.util.config.Config;
@@ -13,13 +13,13 @@ import java.nio.file.Path;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public final class ConcurrentLocalFileConfigLoader implements ConfigLoader {
+public final class ConcurrentLocalFileConfigRepository implements ConfigRepository {
 
     private final Path configFolder;
     private final ConfigSerializer serializer;
     private final Lock lock;
 
-    public ConcurrentLocalFileConfigLoader(@NotNull Path configFolder, @NotNull ConfigSerializer serializer) {
+    public ConcurrentLocalFileConfigRepository(@NotNull Path configFolder, @NotNull ConfigSerializer serializer) {
         Arguments.notNull(configFolder, "configFolder");
         Arguments.notNull(serializer, "serializer");
 
