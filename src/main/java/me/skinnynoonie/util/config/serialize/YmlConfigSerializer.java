@@ -9,6 +9,10 @@ import org.yaml.snakeyaml.nodes.Tag;
 
 public final class YmlConfigSerializer implements ConfigSerializer {
 
+    public static @NotNull YmlConfigSerializer createDefault() {
+        return new YmlConfigSerializer(new Yaml());
+    }
+
     private final Yaml yaml;
 
     public YmlConfigSerializer(@NotNull Yaml yaml) {
