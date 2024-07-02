@@ -11,6 +11,7 @@ public interface ConfigSerializer {
      * @param config The config to serialize.
      * @return The serialized form of the config.
      * @throws me.skinnynoonie.util.config.exception.ConfigSerializationException If an exception occurs while serializing.
+     * @throws IllegalArgumentException If any arguments are null.
      */
     @NotNull String serialize(@NotNull Config config);
 
@@ -20,8 +21,9 @@ public interface ConfigSerializer {
      * @param string The deserialized config.
      * @param configClass The config class that the deserialized config represents.
      * @return A {@link Config} with the type of the {@code configClass} provided.
+     * @throws IllegalArgumentException If any arguments are null.
      */
-    <C extends Config> @NotNull C deserialize(@NotNull String string, Class<C> configClass);
+    <C extends Config> @NotNull C deserialize(@NotNull String string, @NotNull Class<C> configClass);
 
     /**
      * Returns the format this config serializer is associated with.

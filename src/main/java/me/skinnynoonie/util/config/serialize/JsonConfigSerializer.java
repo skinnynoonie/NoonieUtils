@@ -39,7 +39,10 @@ public final class JsonConfigSerializer implements ConfigSerializer {
     }
 
     @Override
-    public <C extends Config> @NotNull C deserialize(@NotNull String string, Class<C> configClass) {
+    public <C extends Config> @NotNull C deserialize(@NotNull String string, @NotNull Class<C> configClass) {
+        Arguments.notNull(string, "string");
+        Arguments.notNull(configClass, "configClass");
+
         try {
             return this.gson.fromJson(string, configClass);
         } catch (JsonParseException e) {

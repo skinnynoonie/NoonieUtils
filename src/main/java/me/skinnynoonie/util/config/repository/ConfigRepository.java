@@ -51,4 +51,26 @@ public interface ConfigRepository {
      */
     boolean isSaved(@NotNull String configId);
 
+    /**
+     * Loads the config if it exists, otherwise saves the provided fallback config.
+     *
+     * @param configId The ID of the config to load/create.
+     * @param fallbackConfig The fallback config that will be used if the config does not exist.
+     * @return The loaded config if it exists, otherwise the provided fallback config.
+     * @throws IllegalArgumentException If any arguments are null.
+     * @throws me.skinnynoonie.util.config.exception.ConfigException If an exception occurs while checking, loading, or saving.
+     * @throws me.skinnynoonie.util.config.exception.ConfigSerializationException If an exception occurs during a serialization process.
+     */
+    @SuppressWarnings("unchecked")
+    default <C extends Config> @NotNull C loadOrSave(@NotNull String configId, @NotNull C fallbackConfig) {
+        if (this.isSaved(configId)) {
+            C loadedConfig = (C) this.load(configId, fallbackConfig.getClass());
+            this.save(configId, loadedConfig);
+            return loadedConfig;
+        } else {
+            this.save(configId, fallbackConfig);
+            return fallbackConfig;
+        }
+    }
+
 }
