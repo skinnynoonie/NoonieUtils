@@ -56,10 +56,11 @@ public final class RomanNumeralConverter {
         return value;
     }
 
+    @SuppressWarnings("ConstantConditions")
     private static int findNumeralValueOrThrow(char numeral, int index, String input) {
         Integer numeralValue = SIG_NUMERALS_MAP.get(numeral);
-        Arguments.legal(numeralValue != null,
-                "illegal numeral '%s' found at index %s from input '%s'", numeral, index, input);
+        Arguments.legal(numeralValue != null, "illegal numeral '%s' found at index %s from input '%s'",
+                                                                numeral,           index,         input);
         return numeralValue;
     }
 
